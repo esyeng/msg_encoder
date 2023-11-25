@@ -3,13 +3,26 @@
 @tailwind utilities;
 
 :root {
+
+    --dark-cyan: #048a81ff;
+    --black-olive: #37392eff;
+    --sage: #b5ba72ff;
+    --eminence: #7e3f8fff;
+    --plum-web: #f5a6e6ff;
+
+    --blood-red: #660000ff;
+    --sunset: #fed18cff;
+    --sunset-2: #fed99bff;
+    --cinnabar: #e55934ff;
+    --claret: #990033ff;
+
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: var(--sunset);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
