@@ -29,7 +29,7 @@ const Header: React.FC = () => {
             number: 2,
             action: action
         })
-        console.log('new msg for us!', newMessage);
+        // console.log('new msg for us!', newMessage);
         setTitle(newMessage.result);
     }
     return (
