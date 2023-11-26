@@ -44,15 +44,12 @@ export const Title = styled.h1`
 `
 export const StyledButton = styled.button`
     display: flex;
+    background-color: #e55934ff;
     align-items: center;
     justify-content: center;
-    background: transparent;
     border: none;
-    outline: none;
     padding: 10px;
-    margin-right: 10px;
-    height: 4rem;
-    width: 7rem;
+    flex-basis: 1;
 
     &:hover {
         background: rgba(0, 0, 0, 0.1);
