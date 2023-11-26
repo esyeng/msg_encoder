@@ -1,4 +1,5 @@
 import { API_URL } from "../constants"
+import axios from 'axios';
 
 interface Params {
     message: string;
@@ -17,14 +18,8 @@ export const sendMessage = async ({ message, number, action }: Params) => {
             message: message,
             inputted_number: number
         }
-        const res = await fetch(API_URL + action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(reqBody)
-        })
-        const data = await res.json()
+        const res = await axios.post(API_URL + action, reqBody)
+        const data = res.data
         console.log(data)
         return data
     } catch (err) {
