@@ -52,7 +52,7 @@ export const StyledButton = styled.button`
     padding: 10px;
     margin-right: 10px;
     height: 4rem;
-    width: 4rem;
+    width: 7rem;
 
     &:hover {
         background: rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@ export const StyledButton = styled.button`
 
 export const Image = styled.img`
         height: 2rem;
-        width: 2rem;
+        width: 4rem;
     margin-right: 5px;
 
     `

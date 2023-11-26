@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import luvnotesicon from '../assets/luvnotesicon.svg'
-import { HeaderStyles, Image, RowContainer, StyledButton, Title } from '../styled-components'
+import { HeaderStyles, RowContainer, Title } from '../styled-components'
 import { sendMessage } from '../utils/encoder'
+import styled from 'styled-components';
 
 const Header: React.FC = () => {
     const [decoded, setDecoded] = useState<boolean>(false);
@@ -34,10 +35,12 @@ const Header: React.FC = () => {
     return (
         <HeaderStyles>
             <RowContainer>
-                <StyledButton onClick={handleClick}>
-                    <Image src={luvnotesicon} className="logo" alt="app logo" />
-                </StyledButton>
-                <Title>{title}</Title>
+                <IconButton onClick={handleClick}>
+                    <img src={luvnotesicon} className="logo" alt="app logo" />
+                </IconButton>
+                <TxtContainer>
+                    <Title>{title}</Title>
+                </TxtContainer>
             </RowContainer>
         </HeaderStyles>
     )
@@ -45,3 +48,32 @@ const Header: React.FC = () => {
 }
 
 export default Header;
+
+const TxtContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+`;
+
+export const IconButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-right: 10px;
+    height: 4rem;
+    width: 7rem;
+
+    &:hover {
+        background: rgba(108, 26, 26, 0.147);
+    }
+
+    &:focus {
+        outline: none;
+    }
+    `;
