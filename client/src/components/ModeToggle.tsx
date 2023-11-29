@@ -5,7 +5,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 `;
 
 const ToggleContainer = styled.div`
@@ -13,7 +16,10 @@ const ToggleContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-`;
+  background-color: transparent;
+  border: none;
+  outline: none;
+`
 
 const Button = styled.button`
   flex: 0.5;
@@ -23,11 +29,11 @@ const Text = styled.p`
   font-weight: 500;
   text-align: center;
   margin: 0 2px;
-  color: ${props => props.selected ? '#FFB8DE' : '#000'};
+  color: ${props => props.selected ? '#fff' : '#000'};
 `;
 
 const SelectedView = styled.div<any>`
-  background-color: ${props => props.selected ? '#3A015C' : 'transparent'};
+  background-color: ${props => props.selected ? '#e55934ff' : '#b6aa956f'};
   padding-top: 5px;
   border-radius: 12px;
   min-height: 40px;
