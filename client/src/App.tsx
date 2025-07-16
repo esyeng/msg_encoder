@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 function App() {
     const [mode, setMode] = useState<string>('encode')
+    console.log(mode);
     return (
         <>
             <ColumnContainer>

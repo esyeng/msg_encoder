@@ -25,7 +25,11 @@ const Button = styled.button`
   flex: 0.5;
 `;
 
-const Text = styled.p<any>`
+interface TextProps {
+    selected: boolean;
+    }
+
+const Text = styled.p<TextProps>`
   font-weight: 500;
   text-align: center;
   margin: 0 2px;
@@ -52,7 +56,7 @@ const ModeToggle: React.FC<ModeToggleProps> = ({ optionA, optionB, selectedOptio
   const [a, setA] = useState(true);
   const [b, setB] = useState(false);
 
-  const handleSelectOption = (option: any, isA: boolean) => { 
+  const handleSelectOption = (option: any, isA: boolean) => {
     selectedOption(option);
     setA(isA ? true : false);
     setB(isA ? false : true);
