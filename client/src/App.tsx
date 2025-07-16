@@ -14,7 +14,7 @@ function App() {
             <ColumnContainer>
                 <Header />
                 <ModeToggle optionA='encode'optionB='decode' selectedOption={setMode} />
-                <Card action='encode' />
+                <Card action={mode} />
             </ColumnContainer>
         </>
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardStyles, StyledButton } from '../styled-components';
 import TypedMessage from './TypedMessage';
 import { sendMessage } from '../utils/encoder';
@@ -14,6 +14,14 @@ const Card: React.FC<CardProps> = ({action}) => {
     const [typedMessage, setTypedMessage] = useState<string>('');
     const [rerender, setRerender] = useState<boolean>(false); 
     const [msgKey, setMsgKey] = useState<string>('');
+    const [mode, setMode] = useState<string>(action);
+
+    useEffect(() => {
+        if (mode !== action) {
+            setMessage("");
+            setMode(action);
+        } 
+    }, [action])
 
     const handleSend = async () => {
         setRerender(!rerender);
@@ -27,7 +35,6 @@ const Card: React.FC<CardProps> = ({action}) => {
                 setTypedMessage(newMessage.result);
                 return;
             }
-            // setTypedMessage(newMessage.result);
         } catch (err) {
             console.log(err);
         }
