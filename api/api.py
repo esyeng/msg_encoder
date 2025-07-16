@@ -16,7 +16,7 @@ secret_number = 0
 
 @api.route('/', methods=['GET'])
 def serve_web_page():
-    return render_template('secret_messenger.html')
+    return jsonify({"hello": "world"})
 
 
 @api.route('/encode', methods=['POST'])
@@ -52,4 +52,4 @@ def decode_input():
 
 
 if __name__ == "__main__":
-    api.run(debug=True)
+    api.run(debug=False)
