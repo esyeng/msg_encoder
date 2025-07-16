@@ -28,9 +28,7 @@ class Encoder:
         for char in message:
             if char.isalpha():
                 start = ord("a") if char.islower() else ord("A")
-                print("start", start)
                 shift = (ord(char) - start + secret_number) % 26
-                print("shift", shift)
                 secret_message += chr((start + shift))
             else:
                 secret_message += char
