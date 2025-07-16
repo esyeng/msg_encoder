@@ -25,7 +25,7 @@ const Button = styled.button`
   flex: 0.5;
 `;
 
-const Text = styled.p`
+const Text = styled.p<any>`
   font-weight: 500;
   text-align: center;
   margin: 0 2px;
