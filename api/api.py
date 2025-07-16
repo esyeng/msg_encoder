@@ -2,7 +2,7 @@ import sys
 
 from flask_cors import CORS
 from flask import Flask, request, jsonify, render_template
-import encoder
+from encoder import Encoder
 
 
 print(sys.path)
@@ -28,7 +28,7 @@ def encode_input():
     global secret_number
     if 'secret_number' in data:
         secret_number = data.get('secret_number', 0)
-        result = encoder.caesar_better(message, secret_number)
+        result = Encoder.caesar_better(message, secret_number)
     else:
         result = "No secret number provided.. Come on now."
     return jsonify({"result": result})
@@ -38,14 +38,14 @@ def encode_input():
 def decode_input():
     result = ""
     data = request.json
-    print("decode route data!")
     message = data.get('message', '')
     if 'inputted_number' in data:
         inputted_number = data.get('inputted_number', 0)
+        
         if inputted_number == secret_number:
-            result = encoder.caesar_better(message, -secret_number)
+            result = Encoder.caesar_better(message, -secret_number)
         else:
-            result = "That's not the right number, love. Try again ;)"
+            result = "That's not the right number. Try again ;)"
     else:
         result = "You have to guess the number, silly!"
     return jsonify({"result": result})
