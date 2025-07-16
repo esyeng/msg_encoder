@@ -5,7 +5,6 @@ import { sendMessage } from '../utils/encoder'
 import styled from 'styled-components';
 
 const Header: React.FC = () => {
-    const [decoded, setDecoded] = useState<boolean>(false);
     const [title, setTitle] = useState<string>("nwxpqvgu");
 
     useEffect(() => {
@@ -21,15 +20,8 @@ const Header: React.FC = () => {
         encodeTitle();
     }, [])
 
-    const handleClick = async () => {
-        const action = decoded ? 'encode' : 'decode';
-        setDecoded(prev => !prev);
-        const newMessage = await sendMessage({
-            message: title,
-            number: 2,
-            action: action
-        })
-        setTitle(newMessage.result);
+    const handleClick = async () => {        
+        setTitle(title === "luvnotes" ? "nwxpqvgu" : "luvnotes");
     }
     return (
         <HeaderStyles>

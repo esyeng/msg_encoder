@@ -7,8 +7,7 @@ interface TypedMessageProps {
 }
 
 const TypedMessage: React.FC<TypedMessageProps> = ({ message, className }) => {
-    const typingDelay = 40; // Delay between each character in milliseconds
-
+    const typingDelay = 40;
     const [displayedMessage, setDisplayedMessage] = useState('');
 
     useEffect(() => {
@@ -22,7 +21,7 @@ const TypedMessage: React.FC<TypedMessageProps> = ({ message, className }) => {
             }
         }, typingDelay);
 
-        // Cleanup interval on component unmount
+    
         return () => {
             clearInterval(intervalId);
         };
